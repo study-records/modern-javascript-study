@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas의 기본</title>
+    <script>
+        window.onload = function() {
+            // canvas 요소 가져오기
+            var canvas = document.getElementById("mycanvas");
+            // canvas 랜더링 컨텍스트 가져오기
+            var ctx = canvas.getContext("2d");
+
+	        ctx.beginPath();
+	        // 시계 방향
+	        ctx.arc(50,50,25,0, 270 * Math.PI/180,false);
+	        ctx.fill();
+
+	        ctx.beginPath();
+	        // 시계 반대 방향
+	        ctx.arc(110,50,25,0, 270 * Math.PI/180,true);
+	        ctx.fill();
+
+            // 1. 그리기
+	        ctx.beginPath();
+	        ctx.moveTo(200,200);
+	        ctx.lineTo(250,200);
+	        ctx.closePath();
+	        ctx.stroke();
+
+            ctx.beginPath();
+            // 시계 방향
+            ctx.arc(200,200,50,0, 180 * Math.PI/180,false);
+            ctx.stroke();
+
+            // 시계 반대 방향
+            ctx.beginPath();
+            ctx.arc(200,200,40,0 * Math.PI/180,180 * Math.PI/180,true);
+            ctx.stroke()
+
+
+            // ------------------2번 원 그리기-----------
+
+            // 시계 방향
+	        ctx.beginPath();
+	        ctx.arc(350,200,50,0, 360 * Math.PI/180,false);
+	        ctx.stroke();
+
+	        // 시계 반대 방향
+	        // ctx.beginPath();
+	        // ctx.arc(350,200,50,180 * Math.PI/180,360 * Math.PI/180,false);
+	        // ctx.stroke()
+
+            // -------------- 3번 반원 그리기
+	        // 아래 작은 반원 그리기
+	        ctx.beginPath();
+	        ctx.arc(500,200,50,0,180 * Math.PI/180,false); // 시계 방향
+	        ctx.stroke()
+
+            // 작은 반원 위 그리기
+	        ctx.beginPath();
+	        ctx.arc(600,200,50,0,180 * Math.PI/180,true); // 시계 반대 방향
+	        ctx.stroke();
+
+
+            // 큰 반원 위 그리기
+	        ctx.beginPath();
+	        ctx.arc(550,200,100,0,180 * Math.PI/180,true); // 시계 반대 방향
+	        ctx.stroke();
+
+	        // 작은 반원 위 그리기
+	        ctx.beginPath();
+	        ctx.arc(550,200,100,0,180 * Math.PI/180,false);
+	        ctx.stroke()
+
+            // 4번째 아래 시계 방향
+            ctx.beginPath();
+	        ctx.moveTo(150,350);
+	        ctx.lineTo(200,350);
+	        ctx.moveTo(200,350);
+	        ctx.lineTo(243,376);
+	        ctx.closePath();
+	        ctx.stroke();
+	        ctx.beginPath();
+	        // 시계 방향
+	        ctx.arc(200,350,50,30 * Math.PI/180,180 * Math.PI/180,false);
+	        ctx.stroke();
+
+            // 4번째 위에 시계 반대 방향
+	        ctx.beginPath();
+	        ctx.moveTo(176,324);
+	        ctx.lineTo(220,350);
+	        ctx.moveTo(220,350);
+	        ctx.lineTo(270,350);
+	        ctx.closePath();
+	        ctx.stroke();
+
+	        ctx.beginPath();
+	        ctx.arc(220,350,50,0,210 * Math.PI/180,true);
+	        ctx.stroke()
+        }
+    </script>
+</head>
+<body>
+<canvas id="mycanvas" width="800" height="400"></canvas>
+</body>
+</html>

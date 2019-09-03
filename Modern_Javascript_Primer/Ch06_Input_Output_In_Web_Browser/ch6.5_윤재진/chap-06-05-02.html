@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas의 기본</title>
+	<script>
+		window.onload = function() {
+			// canvas 요소 가져오기
+			var canvas = document.getElementById("mycanvas");
+			// canvas 랜더링 컨텍스트 가져오기
+			var ctx = canvas.getContext("2d");
+			// 그리기
+			ctx.beginPath(); 	// 렌더링 패스를 기록시작, 지금까지 정의한 패스 초기화
+			ctx.moveTo(320,10);	// 좌표로 이동
+			ctx.lineTo(420,100);// 현재 좌표에서 지정된 좌표까지 선을 정의
+			ctx.lineTo(220,100);
+			ctx.closePath();	// 패스의 마지막점과 시작점을 직선으로 연결하고 패스 닫기
+			ctx.stroke();		// 패스를 Canvas에 그리기기			// 삼각형 채우기
+			ctx.beginPath();
+			ctx.moveTo(320,120);
+			ctx.lineTo(420,210);
+			ctx.lineTo(220,210);
+			ctx.fill();
+			// canvas 요소 가져오기
+			var ctx1 = document.getElementById("movePen").getContext("2d");
+			// 펜 이동시키기
+			ctx1.beginPath();
+			ctx1.moveTo(320,0);
+			ctx1.lineTo(320,100);
+			ctx1.moveTo(270,50);
+			ctx1.lineTo(370,50);
+			ctx1.closePath();
+			ctx1.stroke();
+		}
+	</script>
+</head>
+<body>
+    <h3>6.5.5 패스로 그리기</h3>
+	<canvas id="mycanvas" width="640" height="300"></canvas>
+	<h4>펜 이동시키기</h4>
+	<canvas id="movePen" width="640" height="600"></canvas>
+
+
+</body>
+</html>
