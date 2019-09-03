@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> 이미지 파일 읽어 오기</title>
+    <style>
+        canvas {
+            border: 2px solid gray;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("mycanvas"); // (1)
+            var ctx = canvas.getContext('2d');                // (2)
+            var img = new Image();
+
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0);
+            };
+
+            img.src = './animal.png';
+        };
+    </script>
+</head>
+
+<body>
+    <canvas id="mycanvas" width="500" height="350"></canvas>
+</body>
+
+</html>
